@@ -1,0 +1,56 @@
+pipeline {
+    agent {
+        node {
+          label 'jenkins_slave_3'
+        }
+	}
+	stages {
+    stage('Checkout') {
+			steps {
+                script {
+                    echo "Clone Repo.............."
+        					cleanWs()
+        					withCredentials([usernamePassword(credentialsId: "BROADCOM", passwordVariable: 'git_pass', usernameVariable: 'git_user')]) {
+        					    sh("git clone https://${git_user}:${git_pass}@github.gwd.broadcom.net/BROADCOM/gtso-cicd-helm-helloworld.git")
+        					    dir("gtso-cicd-helm-helloworld"){
+        					        sh("git checkout dev-rekor-sg-1")
+        					        sh("in-toto-record start -n clone -m * -k resources/keys/alice")
+            					    sh("python resources/keys/create_layout.py")
+            					    sh("cat root.layout")
+            					    sh("in-toto-record stop -n clone -p src/* -k resources/keys/alice")
+        					    }
+        					}
+                }
+            }
+        }
+        stage('code-build') {
+			steps {
+                script {
+                    dir("gtso-cicd-helm-helloworld"){
+                        // sh("sleep 60")
+                        sh("in-toto-run -n code-build -k resources/keys/alice -m src/ -p target/SpringBootHelloWorld-0.0.1-SNAPSHOT.jar -- mvn clean install -DskipTests")
+                      }
+                }
+            }
+        }
+        stage('verify') {
+			steps {
+                script {
+                    dir("gtso-cicd-helm-helloworld"){
+                        sh("sleep 60")
+                        sh("mkdir final_product")
+                        sh("cp *.link final_product")
+                        sh("cp resources/keys/* final_product")
+                        sh("cp root.layout final_product")
+                        sh("cp -R target/* final_product")
+                        sh("chmod -R 777 final_product/*")
+                        dir("final_product"){
+                            sh("in-toto-verify --layout root.layout --layout-key alice.pub -v")
+                        }
+                      }
+                }
+            }
+        }
+        
+	}
+}

@@ -1,0 +1,264 @@
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on jenkins_slave_3 in /tmp/tools/gcp-jenkins/workspace/dev-rekor-sg-1
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+Clone Repo..............
+[Pipeline] cleanWs
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
+[Pipeline] withCredentials
+Masking supported pattern matches of $git_pass
+[Pipeline] {
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [git_pass]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ git clone https://.....gtso-cicd-helm-helloworld.git
+Cloning into 'gtso-cicd-helm-helloworld'...
+[Pipeline] dir
+Running in /tmp/tools/gcp-jenkins/workspace/dev-rekor-sg-1/gtso-cicd-helm-helloworld
+[Pipeline] {
+[Pipeline] sh
++ git checkout dev-rekor-sg-1
+Switched to a new branch 'dev-rekor-sg-1'
+branch 'dev-rekor-sg-1' set up to track 'origin/dev-rekor-sg-1'.
+[Pipeline] sh
++ in-toto-record start -n clone -m centos-packer.json commands.sh deployment docker Dockerfile index.htmlbkp Jenkinsfile JenkinsFiles junit.xml mychart mychart1 pom.xml project-test README.md resources script src -k resources/keys/alice
+/usr/local/lib/python3.6/site-packages/securesystemslib/hash.py:40: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.hazmat.backends import default_backend
+[Pipeline] sh
++ python resources/keys/create_layout.py
+/usr/local/lib/python3.6/site-packages/securesystemslib/ecdsa_keys.py:37: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.hazmat.backends import default_backend
+Created in-toto layout as "root.layout".
+[Pipeline] sh
++ cat root.layout
+{
+ "signatures": [
+  {
+   "keyid": "556caebdc0877eed53d419b60eddb1e57fa773e4e31d70698b588f3e9cc48b35",
+   "sig": "4fce1a792b255af456c25a9975dbe9468ab79f554283a37da8811dd2d9e193564dadbe06318a7e837a7e0429fd96e8aadf90bdd1c20c46a1d63a15deed9a856096c29652a590521648425123f4fbaf1d02cb0bbc5137f99b64debe6c3f154f304c51bec4e477e5f275d571c30564b6f185ef3f7a75cbc4cb4ced5df19dcc684022f9c6e041f49d0f0824ac439737c6e1c4450d8d33264188a99a1fad8929e0825e514a52f9aad9034c372a67505d3ab8eaa982c72fc7317130020e9f6f23dd274cd7bd0350d237a2e51d31115990c206b644a890649ff74f7bd72c9904d02818bf94f0f52406695eb163841c795da7813a00f9bec32826093148a3f0230c72d3d23c69dfb6b3d12d5eecf42a7c8fbc826b61b162cbb642acd99317db9afa565f01cd33c8c9385db015604ee16df198e9bd31f8d0f4345512222457073b4b9f1c36ab95020b0005681d1a62cbebb84007a70b3ec0e65a777ad6cebb6655abcf9e8f840e8fb250553a28add420375b92f476f6c8cdd10a6eda97e1fc4ffc4d5c6b"
+  }
+ ],
+ "signed": {
+  "_type": "layout",
+  "expires": "2022-12-14T20:29:07Z",
+  "inspect": [
+   {
+    "_type": "inspection",
+    "expected_materials": [
+     [
+      "MATCH",
+      "target/SpringBootHelloWorld-0.0.1-SNAPSHOT.jar",
+      "WITH",
+      "PRODUCTS",
+      "FROM",
+      "code-build"
+     ]
+    ],
+    "expected_products": [
+     [
+      "MATCH",
+      "./SpringBootHelloWorld-0.0.1-SNAPSHOT.jar",
+      "WITH",
+      "PRODUCTS",
+      "FROM",
+      "code-build"
+     ]
+    ],
+    "name": "docker-build",
+    "run": [
+     "ls"
+    ]
+   }
+  ],
+  "keys": {
+   "556caebdc0877eed53d419b60eddb1e57fa773e4e31d70698b588f3e9cc48b35": {
+    "keyid": "556caebdc0877eed53d419b60eddb1e57fa773e4e31d70698b588f3e9cc48b35",
+    "keyid_hash_algorithms": [
+     "sha256",
+     "sha512"
+    ],
+    "keytype": "rsa",
+    "keyval": {
+     "private": "",
+     "public": "-----BEGIN PUBLIC KEY-----\nMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAxPX3kFs/z645x4UOC3KF\nY3V80YQtKrp6YS3qU+Jlvx/XzK53lb4sCDRU9jqBBx3We45TmFUibroMd8tQXCUS\ne8gYCBUBqBmmz0dEHJYbW0tYF7IoapMIxhRYn76YqNdl1JoRTcmzIaOJ7QrHxQrS\nGpivvTm6kQ9WLeApG1GLYJ3C3Wl4bnsI1bKSv55Zi45/JawHzTzYUAIXX9qCd3Io\nHzDucz9IAj9Ookw0va/q9FjoPGrRB80IReVxLVnbo6pYJfu/O37jvEobHFa8ckHd\nYxUIg8wvkIOy1O3M74lBDm6CVI0ZO25xPlDB/4nHAE1PbA3aF3lw8JGuxLDsetxm\nfzgAleVt4vXLQiCrZaLf+0cM97JcT7wdHcbIvRLsij9LNP+2tWZgeZ/hIAOEdaDq\ncYANPDIAxfTvbe9I0sXrCtrLer1SS7GqUmdFCdkdun8erXdNF0ls9Rp4cbYhjdf3\nyMxdI/24LUOOQ71cHW3ITIDImm6I8KmrXFM2NewTARKfAgMBAAE=\n-----END PUBLIC KEY-----"
+    },
+    "scheme": "rsassa-pss-sha256"
+   }
+  },
+  "readme": "",
+  "steps": [
+   {
+    "_type": "step",
+    "expected_command": [],
+    "expected_materials": [],
+    "expected_products": [
+     [
+      "CREATE",
+      "src/*"
+     ]
+    ],
+    "name": "clone",
+    "pubkeys": [
+     "556caebdc0877eed53d419b60eddb1e57fa773e4e31d70698b588f3e9cc48b35"
+    ],
+    "threshold": 1
+   },
+   {
+    "_type": "step",
+    "expected_command": [
+     "mvn",
+     "clean",
+     "install",
+     "-DskipTests"
+    ],
+    "expected_materials": [
+     [
+      "MATCH",
+      "src/*",
+      "WITH",
+      "PRODUCTS",
+      "FROM",
+      "clone"
+     ],
+     [
+      "DISALLOW",
+      "*"
+     ]
+    ],
+    "expected_products": [
+     [
+      "CREATE",
+      "target/SpringBootHelloWorld-0.0.1.jar"
+     ],
+     [
+      "CREATE",
+      "target/*"
+     ],
+     [
+      "DISALLOW",
+      "*"
+     ]
+    ],
+    "name": "code-build",
+    "pubkeys": [
+     "556caebdc0877eed53d419b60eddb1e57fa773e4e31d70698b588f3e9cc48b35"
+    ],
+    "threshold": 1
+   }
+  ]
+ }
+}
+[Pipeline] sh
++ in-toto-record stop -n clone -p src/main src/test -k resources/keys/alice
+/usr/local/lib/python3.6/site-packages/securesystemslib/hash.py:40: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.hazmat.backends import default_backend
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (code-build)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] dir
+Running in /tmp/tools/gcp-jenkins/workspace/dev-rekor-sg-1/gtso-cicd-helm-helloworld
+[Pipeline] {
+[Pipeline] sh
++ in-toto-run -n code-build -k resources/keys/alice -m src/ -p target/SpringBootHelloWorld-0.0.1-SNAPSHOT.jar -- mvn clean install -DskipTests
+/usr/local/lib/python3.6/site-packages/securesystemslib/hash.py:40: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.hazmat.backends import default_backend
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (verify)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] dir
+Running in /tmp/tools/gcp-jenkins/workspace/dev-rekor-sg-1/gtso-cicd-helm-helloworld
+[Pipeline] {
+[Pipeline] sh
++ sleep 60
+[Pipeline] sh
++ mkdir final_product
+[Pipeline] sh
++ cp clone.556caebd.link code-build.556caebd.link final_product
+[Pipeline] sh
++ cp resources/keys/alice resources/keys/alice.pub resources/keys/cosign resources/keys/create_layout.py final_product
+[Pipeline] sh
++ cp root.layout final_product
+[Pipeline] sh
++ cp -R target/classes target/generated-sources target/generated-test-sources target/maven-archiver target/maven-status target/test-classes final_product
+[Pipeline] sh
++ chmod -R 777 final_product/alice final_product/alice.pub final_product/classes final_product/clone.556caebd.link final_product/code-build.556caebd.link final_product/cosign final_product/create_layout.py final_product/generated-sources final_product/generated-test-sources final_product/maven-archiver final_product/maven-status final_product/root.layout final_product/test-classes
+[Pipeline] dir
+Running in /tmp/tools/gcp-jenkins/workspace/dev-rekor-sg-1/gtso-cicd-helm-helloworld/final_product
+[Pipeline] {
+[Pipeline] sh
++ in-toto-verify --layout root.layout --layout-key alice.pub -v
+/usr/local/lib/python3.6/site-packages/securesystemslib/hash.py:40: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.hazmat.backends import default_backend
+Loading layout...
+Loading layout key(s)...
+Verifying layout signatures...
+Verifying layout expiration...
+Reading link metadata files...
+Verifying link metadata signatures...
+Verifying sublayouts...
+Verifying alignment of reported commands...
+Verifying command alignment for 'clone.556caebd.link'...
+Verifying command alignment for 'code-build.556caebd.link'...
+Verifying threshold constraints...
+Skipping threshold verification for step 'clone' with threshold '1'...
+Skipping threshold verification for step 'code-build' with threshold '1'...
+Verifying Step rules...
+Verifying material rules for 'clone'...
+Verifying product rules for 'clone'...
+Verifying 'CREATE src/*'...
+Verifying material rules for 'code-build'...
+Verifying 'MATCH src/* WITH PRODUCTS FROM clone'...
+Verifying 'DISALLOW *'...
+Verifying product rules for 'code-build'...
+Verifying 'CREATE target/SpringBootHelloWorld-0.0.1.jar'...
+Verifying 'CREATE target/*'...
+Verifying 'DISALLOW *'...
+Executing Inspection commands...
+Executing command for inspection 'docker-build'...
+Running 'docker-build'...
+Recording materials '.'...
+Running command 'ls'...
+Recording products '.'...
+Creating link metadata...
+Verifying Inspection rules...
+Verifying material rules for 'docker-build'...
+Verifying 'MATCH target/SpringBootHelloWorld-0.0.1-SNAPSHOT.jar WITH PRODUCTS FROM code-build'...
+Verifying product rules for 'docker-build'...
+Verifying 'MATCH ./SpringBootHelloWorld-0.0.1-SNAPSHOT.jar WITH PRODUCTS FROM code-build'...
+The software product passed all verification.
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

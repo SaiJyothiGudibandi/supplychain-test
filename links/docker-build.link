@@ -1,0 +1,158 @@
+{
+ "signatures": [],
+ "signed": {
+  "_type": "link",
+  "byproducts": {
+   "return-value": 0,
+   "stderr": "",
+   "stdout": ""
+  },
+  "command": [
+   "ls"
+  ],
+  "environment": {},
+  "materials": {
+   "alice": {
+    "sha256": "c1d5009b017500a74949e98dab686cc71e7ef79fe93dde68b5ee753c389c4d6b"
+   },
+   "alice.pub": {
+    "sha256": "54d66a3cda423bb31027f388ffb6753a37e7bd5d9d883140fb818dac73456695"
+   },
+   "classes/application.properties": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "classes/com/javainuse/SpringBootHelloWorldApplication.class": {
+    "sha256": "e7200511c1634af60f8daf1afa8657d68b022346698f7fe168ecfd93bbcd28bb"
+   },
+   "classes/com/javainuse/controllers/HelloRepository.class": {
+    "sha256": "0805b1353f44292b688c8dbcd619c43baafaa7ffe3ce53bb746d0b3939f3b167"
+   },
+   "classes/com/javainuse/controllers/HelloRepositoryImpl.class": {
+    "sha256": "8846119d1680984437add2af69189e99d3c59f4eba04426c29b3234becfcb2ea"
+   },
+   "classes/com/javainuse/controllers/HelloService.class": {
+    "sha256": "7d45e342b832369b8f9495d8c52a9cd652644723b33c6695ea8bd6b0fdb1b43a"
+   },
+   "classes/com/javainuse/controllers/HelloServiceImpl.class": {
+    "sha256": "3ffc429912c9ebcc1ba69e65276b2fed8fa58df1046fef2174a056cf3afa0cb6"
+   },
+   "classes/com/javainuse/controllers/IntegrationController.class": {
+    "sha256": "8f1942f1c46de04d65c4152dff1e76f7b411652854082dcbb56764f508b016e3"
+   },
+   "classes/com/javainuse/controllers/MainController.class": {
+    "sha256": "d9961e4320e6033fdb676fda871956cab03d141f1e4d2772ff60beb69288cc43"
+   },
+   "classes/com/javainuse/controllers/TestController.class": {
+    "sha256": "5f80af8edb12372ab870082a1e5a1b88435f3f2cbb3b7b46b2ab002af8b2c2ff"
+   },
+   "classes/com/javainuse/model/Employee.class": {
+    "sha256": "d6e08faecd752eefd7fedc1d89e4920a673584d6af8272839a49fad6abe8bd71"
+   },
+   "cosign": {
+    "sha256": "9484e07b40a0d9c279e33054fa976e4ae5de6191b29e96ef4ce1d13af7626b34"
+   },
+   "create_layout.py": {
+    "sha256": "9aa2f0dfca7bf6f592d69c3d2c94b4ba7530f8313217241d33e40a7dec38a929"
+   },
+   "maven-archiver/pom.properties": {
+    "sha256": "dbced6dd79b114911ff47da6110c1db54d4ead58395b6134dfc57c9667c6ae81"
+   },
+   "maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst": {
+    "sha256": "c712259c5ff8ba79f8ed58bc832fbffa9e89b87fa063163a161312a3b72c3e9e"
+   },
+   "maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst": {
+    "sha256": "9fbb41b2eab8e557120e47043fc02528fc84885c7adbe26b2a04cc4e41e3fa41"
+   },
+   "maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst": {
+    "sha256": "5ba586495a0a6c81d29e429c3f7215193ee5b88a3e212247f033bbb3e60f32e7"
+   },
+   "maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst": {
+    "sha256": "bad049c19aae33547ff26fee62620e71a2b0123c2625baecfd597956b35fe8bb"
+   },
+   "root.layout": {
+    "sha256": "22ad366e1a77040f6f3bdc59e5b9c3bf49102ac1c62a7605805a6456a305646c"
+   },
+   "test-classes/com/javainuse/test/HelloServiceMockTest.class": {
+    "sha256": "c3ab065e9ce2adfca50f06f78b883549d97313ecb60648a70ae67019d7b4d436"
+   },
+   "test-classes/com/javainuse/test/HelloServiceTest.class": {
+    "sha256": "8cdd0470e751937f1b5c8e252f6565ea7b9924a4a3c2cf316e8c8701309d0273"
+   },
+   "test-classes/com/javainuse/test/MainControllerTest.class": {
+    "sha256": "49c17dab3c73bd01006e03ea1eea2765cb977c3a4d10eac0fa286563f2312576"
+   }
+  },
+  "name": "docker-build",
+  "products": {
+   "alice": {
+    "sha256": "c1d5009b017500a74949e98dab686cc71e7ef79fe93dde68b5ee753c389c4d6b"
+   },
+   "alice.pub": {
+    "sha256": "54d66a3cda423bb31027f388ffb6753a37e7bd5d9d883140fb818dac73456695"
+   },
+   "classes/application.properties": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "classes/com/javainuse/SpringBootHelloWorldApplication.class": {
+    "sha256": "e7200511c1634af60f8daf1afa8657d68b022346698f7fe168ecfd93bbcd28bb"
+   },
+   "classes/com/javainuse/controllers/HelloRepository.class": {
+    "sha256": "0805b1353f44292b688c8dbcd619c43baafaa7ffe3ce53bb746d0b3939f3b167"
+   },
+   "classes/com/javainuse/controllers/HelloRepositoryImpl.class": {
+    "sha256": "8846119d1680984437add2af69189e99d3c59f4eba04426c29b3234becfcb2ea"
+   },
+   "classes/com/javainuse/controllers/HelloService.class": {
+    "sha256": "7d45e342b832369b8f9495d8c52a9cd652644723b33c6695ea8bd6b0fdb1b43a"
+   },
+   "classes/com/javainuse/controllers/HelloServiceImpl.class": {
+    "sha256": "3ffc429912c9ebcc1ba69e65276b2fed8fa58df1046fef2174a056cf3afa0cb6"
+   },
+   "classes/com/javainuse/controllers/IntegrationController.class": {
+    "sha256": "8f1942f1c46de04d65c4152dff1e76f7b411652854082dcbb56764f508b016e3"
+   },
+   "classes/com/javainuse/controllers/MainController.class": {
+    "sha256": "d9961e4320e6033fdb676fda871956cab03d141f1e4d2772ff60beb69288cc43"
+   },
+   "classes/com/javainuse/controllers/TestController.class": {
+    "sha256": "5f80af8edb12372ab870082a1e5a1b88435f3f2cbb3b7b46b2ab002af8b2c2ff"
+   },
+   "classes/com/javainuse/model/Employee.class": {
+    "sha256": "d6e08faecd752eefd7fedc1d89e4920a673584d6af8272839a49fad6abe8bd71"
+   },
+   "cosign": {
+    "sha256": "9484e07b40a0d9c279e33054fa976e4ae5de6191b29e96ef4ce1d13af7626b34"
+   },
+   "create_layout.py": {
+    "sha256": "9aa2f0dfca7bf6f592d69c3d2c94b4ba7530f8313217241d33e40a7dec38a929"
+   },
+   "maven-archiver/pom.properties": {
+    "sha256": "dbced6dd79b114911ff47da6110c1db54d4ead58395b6134dfc57c9667c6ae81"
+   },
+   "maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst": {
+    "sha256": "c712259c5ff8ba79f8ed58bc832fbffa9e89b87fa063163a161312a3b72c3e9e"
+   },
+   "maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst": {
+    "sha256": "9fbb41b2eab8e557120e47043fc02528fc84885c7adbe26b2a04cc4e41e3fa41"
+   },
+   "maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst": {
+    "sha256": "5ba586495a0a6c81d29e429c3f7215193ee5b88a3e212247f033bbb3e60f32e7"
+   },
+   "maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst": {
+    "sha256": "bad049c19aae33547ff26fee62620e71a2b0123c2625baecfd597956b35fe8bb"
+   },
+   "root.layout": {
+    "sha256": "22ad366e1a77040f6f3bdc59e5b9c3bf49102ac1c62a7605805a6456a305646c"
+   },
+   "test-classes/com/javainuse/test/HelloServiceMockTest.class": {
+    "sha256": "c3ab065e9ce2adfca50f06f78b883549d97313ecb60648a70ae67019d7b4d436"
+   },
+   "test-classes/com/javainuse/test/HelloServiceTest.class": {
+    "sha256": "8cdd0470e751937f1b5c8e252f6565ea7b9924a4a3c2cf316e8c8701309d0273"
+   },
+   "test-classes/com/javainuse/test/MainControllerTest.class": {
+    "sha256": "49c17dab3c73bd01006e03ea1eea2765cb977c3a4d10eac0fa286563f2312576"
+   }
+  }
+ }
+}

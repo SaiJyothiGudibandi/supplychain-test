@@ -1,0 +1,70 @@
+{
+ "signatures": [
+  {
+   "keyid": "556caebdc0877eed53d419b60eddb1e57fa773e4e31d70698b588f3e9cc48b35",
+   "sig": "a567d30218c0dd599931d6eeb7bb234e33103eabece5026d2b1b3f27a4ffd81efa8e6a5d6e9d708ce6f45130a5a7c94e81d48e777383da57d4ea67c23b580be47d57237f8d32ea4293d0c80f5ea78112b3d4499fa944cd15992e51a162d9dd5185f45f83b1922616ceb77a7e4cabb098f3f869953416bfc8bad9e5e68e53a913f89bab755b59be636c4ae44461505c3b038e953414ccd3f38e3cadb32d0eb1a84641474ef397241cb2ae3268d013b56cc9c938fc3bdc23de80940e9d8d1dc853f93a427012a430395428ef5b218ec1cc9fb5ee216687707746fc952c7df18551506baa7caf1bbde497abf01235356e8be389b1a0df78923ec061743cde6c44e427524a49c2336607004f0ba636bb7e511701e9a06aa586e0b8b7f89e35c33ae0390e95c5a5410e50a44dc112421c1a5e7b589af3332cd63b79ff314ec32c6ff4e186965349e9bec25089a50e2446d41e32f5773449cfa026a78997b574289d50762342dda6d4d249bd1427fe930d56dc819ff9e82e2c72017aff1fa33f3ea20f"
+  }
+ ],
+ "signed": {
+  "_type": "link",
+  "byproducts": {
+   "return-value": 0,
+   "stderr": "",
+   "stdout": ""
+  },
+  "command": [
+   "mvn",
+   "clean",
+   "install",
+   "-DskipTests"
+  ],
+  "environment": {},
+  "materials": {
+   "src/main/java/com/javainuse/SpringBootHelloWorldApplication.java": {
+    "sha256": "45aacb2d3a8bf5628cec731763a27e204820db589422f338389a592429e20efc"
+   },
+   "src/main/java/com/javainuse/controllers/HelloRepository.java": {
+    "sha256": "137a6cfe1ea95272947217c33376020b8310abf075c73bf139e713ddd1c8e0a2"
+   },
+   "src/main/java/com/javainuse/controllers/HelloRepositoryImpl.java": {
+    "sha256": "4ab70678568332b7e0742300f1794fac587b9d06deb326d56561e95f27a4947f"
+   },
+   "src/main/java/com/javainuse/controllers/HelloService.java": {
+    "sha256": "53076cc903bc4b4b737bbdd8a0c1aa9c8d9e7bf516766da6cdebe5128154d547"
+   },
+   "src/main/java/com/javainuse/controllers/HelloServiceImpl.java": {
+    "sha256": "7a40be0e6a49cd32dab09a14ac1e8f414d8854ae75f53f6546761f3c1d6cff8f"
+   },
+   "src/main/java/com/javainuse/controllers/IntegrationController.java": {
+    "sha256": "425cef8dcb227d5d0e605c7581f2a8b57ceaed67602ceee584aaa68dc38cae79"
+   },
+   "src/main/java/com/javainuse/controllers/MainController.java": {
+    "sha256": "0b6bb9db4ac47b7f32ea5c5e0a479756ce5aed1495c8510d0f7001677ca4859c"
+   },
+   "src/main/java/com/javainuse/controllers/TestController.java": {
+    "sha256": "f1c7d492fab9a54a627df769a89f5cde2e915e2cd37812d35f2ca89757fcda31"
+   },
+   "src/main/java/com/javainuse/model/Employee.java": {
+    "sha256": "0d24dbd4eab7ef1445ce28f6e16b4b421bb1750db97590c397d154ca7974a803"
+   },
+   "src/main/resources/application.properties": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "src/test/java/com/javainuse/test/HelloServiceMockTest.java": {
+    "sha256": "0e195c252f5b4ff6704d744d6eadf4433da303f6f2288781576751ff3065afcf"
+   },
+   "src/test/java/com/javainuse/test/HelloServiceTest.java": {
+    "sha256": "d03d321f665c2a454e6e05ea4cb99f7d79f545c81b4431ee97ed9d7781672630"
+   },
+   "src/test/java/com/javainuse/test/MainControllerTest.java": {
+    "sha256": "00ecfc3a7996d4ea8ec6957c55adc52db7dcbf4a07e8773a5f73b00fa8af2e7d"
+   }
+  },
+  "name": "code-build",
+  "products": {
+   "target/SpringBootHelloWorld-0.0.1-SNAPSHOT.jar": {
+    "sha256": "b9554cd77a1bbacf7de9edd24f2852d98f190a0f50079dc66f42d014872ee84f"
+   }
+  }
+ }
+}
